@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="diseno.css">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
 </head>
 
 <!-- ************************* PAGINA ***************************************** --> 
-<body onload='mostrarUsuario(); crearSelector();' class="bg-dark-subtle"> <!-- Funciones llamadas despues de cargar la pagina --> 
+<body onload='mostrarUsuario(); crearSelector(); crearSelectorSerie(); selects();' class="bg-dark-subtle"> <!-- Funciones llamadas despues de cargar la pagina --> 
     <nav class="navbar bg-dark">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1 text-light">Registro de autos</span>
@@ -79,12 +78,32 @@
                 <div id="txtHint"><b>[ La informacion de la persona se mostrara aqui ]</b></div>
             </div>
             <div class="col col-sm-4 mt-5 ">
+              <div class="form-group">
+                <select class="form-select" name="select" id="select">
+                  <option value="placa">Por placa</option>
+                  <option value="serie">Por número de serie</option>
+                </select>
+               </div>
+               <div class="select-placa mt-2">
+                <form method="post">
                 <span id="lugarSelector">[ Lugar donde se coloca el  Selector en la pagina ]</span>
                 <div class="mt-4">
-                <input type="button" class="btn btn-secondary" name="botonConsulta" value="Consulta" onclick="consultaUsuario()" > 
-                <input type="button" name="botonConsulta" class="btn btn-secondary"value="Mostrar todos" onclick="mostrarUsuario()" >
-                <input type="submit" class="btn btn-danger"value="Borra Seleccinado" onclick="borrarUsuario2()">
+                  <input type="button" class="btn btn-secondary" name="botonConsulta" value="Consulta" onclick="consultaUsuario(1)" > 
+                  <input type="button" name="botonConsulta" class="btn btn-secondary"value="Mostrar todos" onclick="mostrarUsuario()" >
+                  <input type="submit" class="btn btn-danger"value="Borra Seleccinado" onclick="borrarUsuario2(1)">
                 </div>
+              </form>
+              </div>
+              <div class="select-serie mt-2">
+                <form>
+                <span id="lugarSelector2">[ Lugar donde se coloca el  Selector en la pagina ]</span>
+                <div class="mt-4">
+                  <input type="button" class="btn btn-secondary" name="botonConsulta" value="Consulta" onclick="consultaUsuario(2)" > 
+                  <input type="button" name="botonConsulta" class="btn btn-secondary"value="Mostrar todos" onclick="mostrarUsuario()" >
+                  <input type="submit" class="btn btn-danger"value="Borra Seleccinado" onclick="borrarUsuario2(2)">
+                </div>
+              </form>
+              </div>
         </div>
         
     

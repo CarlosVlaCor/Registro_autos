@@ -4,13 +4,13 @@
         die('No se pudo conectar: ' . mysqli_error($con));
 
     mysqli_select_db($con,'registro_autos');
-    $sql="SELECT placa FROM vehiculo";
+    $sql="SELECT num_serie FROM vehiculo";
     $result = mysqli_query($con,$sql);
     echo "<form id='form'>
-        <select name='autos' id='seleccion-placa' onchange='mifuncion()' class='form-select'> ";
-    echo "<option> Selecciona la placa:</option>";
+        <select name='autos' id='seleccion-serie' onchange='mifuncion()' class='form-select'> ";
+    echo "<option> Selecciona el num de serie:</option>";
     while($ren = mysqli_fetch_array($result)) {
-        echo "<option value='" . $ren['placa'] . "'>".$ren['placa']."</option>";
+        echo "<option value='" . $ren['num_serie'] . "'>".$ren['num_serie']."</option>";
     }
     echo "</select>";
     echo "</form>";

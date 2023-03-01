@@ -43,23 +43,18 @@
             <th>Modelo</th>
             <th>Versión del modelo</th>
             <th>Número de serie</th>
-            <th></th>
         </tr>";
 
         // Obtiene cada fila (arreglo) de resultados
-        while($ren = mysqli_fetch_array($result)) {       
+        while($ren = mysqli_fetch_array($result)) { 
+            $placa = $ren['placa'];  
             echo "<tr>";
-                echo '<td id="idren">' . $ren['placa'] . '</td>';
+                echo '<td id="placaren">' . $placa. '</td>';
                 echo "<td>" . $ren['tipo_vehiculo'] . "</td>";
                 echo "<td>" . $ren['marca'] . "</td>";
                 echo "<td>" . $ren['modelo'] . "</td>";
                 echo "<td>" . $ren['version_modelo'] . "</td>";
                 echo "<td>" . $ren['num_serie'] . "</td>";
-                echo "<td>";
-                echo "     <form method='Post'>"; //El input en un form para realizar un submit ";
-                echo "         <input type='image' src='img/mariners-1 (1).png' value='BorraTodo' onclick='borrarUsuario3('".$ren['placa']."')'>";
-                echo "     </form>";
-                echo "</td>";
             echo "</tr>";
         }
     echo "</table>";

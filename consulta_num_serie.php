@@ -1,14 +1,4 @@
-<head>
- 
-</head>
-<body>
 <?php
-               
-
-    /*Abre la conexion con el servidor de la BD
-       Dominio: localhost
-       usuario: israel
-       password: abc123 */
     $con = mysqli_connect('localhost','carlos','12345');                 
 
     if (!$con) {
@@ -19,9 +9,9 @@
 
     // Selecciona la BD
     mysqli_select_db($con,'registro_autos');                
-    $placa = $_GET['placa'];
+    $serie = $_GET['serie'];
     // Prepara  la consulta SQL
-    $sql="SELECT * FROM vehiculo Where placa='".$placa."'";   
+    $sql="SELECT * FROM vehiculo Where num_serie='".$serie."'";   
     
     // Realiza la consulta
     $result = mysqli_query($con,$sql);  
@@ -48,6 +38,7 @@
                 echo "<td>" . $ren['version_modelo'] . "</td>";
                 echo "<td>" . $ren['num_serie'] . "</td>";
                 
+                
             echo "</tr>";
         }
     echo "</table>";
@@ -55,4 +46,3 @@
     //Cierra la conexion
     mysqli_close($con);
 ?>
-</body>
