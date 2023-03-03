@@ -1,14 +1,5 @@
-<head>
- 
-</head>
-<body>
 <?php
-               
 
-    /*Abre la conexion con el servidor de la BD
-       Dominio: localhost
-       usuario: israel
-       password: abc123 */
     $con = mysqli_connect('localhost','carlos','12345');                 
 
     if (!$con) {
@@ -55,4 +46,3 @@
     //Cierra la conexion
     mysqli_close($con);
 ?>
-</body>

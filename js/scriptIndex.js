@@ -1,10 +1,3 @@
-
-        /****************************************************************
-         *  Funcion que muestra en la pagina Web la tabla con los datos *
-         *  guardados en la BD                                          *
-         ****************************************************************/
-        
-
         function mostrarUsuario(){
             $.get('mostrar_usuario.php',
                 function(respuesta, status){
@@ -32,7 +25,7 @@
 
         function consultaUsuario(num){
             if (num == 1){
-                $.get('consulta_usuario.php', 
+                $.get('consulta_placa.php', 
                 {placa:$("#seleccion-placa").val()},
                 function(respuesta, status){
                     $("#txtHint").html(respuesta);
@@ -48,37 +41,21 @@
             }
             
         }
-
-        /*****************************************************************************
-         *        Funcion que borra de la BD el dato seleccionado en el combo        *
-         *****************************************************************************/         
-         function borrarUsuario2(val) {
+       
+         function borrarSeleccionado(val) {
             if (val== 1){
-                $.post("eliminar_usuarios2.php",
+                $.post("eliminar_por_placa.php",
                 {placa:$("#seleccion-placa").val()}
             );
             }else{
-                $.post("eliminar_usuario_serie.php",
+                $.post("eliminar_por_serie.php",
                 {serie:$("#seleccion-serie").val()}
             );
             }
             
 
         }
-        
 
-        /******************************************************************
-         *        Funcion que borra de la BD el renglon seleccionado         *
-         ******************************************************************/         
-        
-        function borrarUsuario3(val){
-            alert("DSASDA")
-
-        }
-   
-        /*********************************************************************
-         *               Funcion que inserta datos en la BD                  *
-         *********************************************************************/
         function insertarUsuario(){
             $.post("insertar_usuario.php",
             {placa:$("#placa").val(),
@@ -92,13 +69,8 @@
             
         }      
 
-        /************************************************************************
-         *  Funcion que crea un selector en HTML con opciones de una BD y lo    *
-         *  agrega en la pagina. Usa Ajax para elegir la posicion del selector  *
-         *  en la pagina                                                        *
-         ************************************************************************/
         function crearSelector(){
-            $.get("crearSelector.php",
+            $.get("crear_selector_placa.php",
                 function(respuesta, status){
                 $("#lugarSelector").html(respuesta);
            });
@@ -110,12 +82,5 @@
                 $("#lugarSelector2").html(respuesta);
            });
            
-        }
-
-        /*************************************************************************
-         * Funcion que será llamada por el Selector.                             * 
-         *************************************************************************/
-        function mifuncion(){
-           //No hace nada
         }
 
