@@ -1,6 +1,7 @@
 # Registro de autos
 
-*Requisitos para que funcione*
+*Requisitos para no cambiarlo mucho*
+Pa los del team pues
 
 1. Crear una base de datos MySql llamada registro_autos
 
